@@ -11,4 +11,6 @@
     <string name="filusdt">FILUSDT</string>
     <string name="save">Save</string>
     <string name="show">Show Trade</string>
+    <string name="no_overloads_no_downtime_24_7_live">No overLoads.No downtime.24/7 live</string>
+    <string name="support">support</string>
 </resources>
