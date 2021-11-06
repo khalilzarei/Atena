@@ -11,7 +11,9 @@ import androidx.databinding.Bindable;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.khz.atena.BR;
+import com.khz.atena.R;
 import com.khz.atena.model.Item;
+import com.khz.atena.ui.binance.BinanceActivity;
 import com.khz.atena.ui.home.HomeActivity;
 
 public class MainViewModel extends BaseObservable {
@@ -111,7 +113,7 @@ public class MainViewModel extends BaseObservable {
     }
 
     public void goHomeActivity(View view) {
-        if (percent == null || percent.isEmpty()) {
+       /* if (percent == null || percent.isEmpty()) {
             showSnake(view, "Please enter percent");
             return;
         }
@@ -139,10 +141,12 @@ public class MainViewModel extends BaseObservable {
             showSnake(view, "Please enter Take Profit");
             return;
         }
-        Item   item   = new Item(percent, filusdt, pl, size, entryPrice, currentPrice, takeProfit);
+        Item   item   = new Item(percent, filusdt, pl, size, entryPrice, currentPrice, takeProfit);*/
         Intent intent = new Intent(activity, HomeActivity.class);
-        intent.putExtra("item", item);
-        intent.putExtra("picId", getPicId());
+        if (view.getId() == R.id.cardTwo)
+            intent = new Intent(activity, BinanceActivity.class);
+//        intent.putExtra("item", item);
+//        intent.putExtra("picId", getPicId());
         activity.startActivity(intent);
     }
 

@@ -13,4 +13,7 @@
     <string name="show">Show Trade</string>
     <string name="no_overloads_no_downtime_24_7_live">No overLoads.No downtime.24/7 live</string>
     <string name="support">support</string>
+    <string name="set_text_for_field">SET TEXT FOR FIELD</string>
+    <string name="enter_text">ENTER TEXT</string>
+    <string name="last_price">Last Price</string>
 </resources>

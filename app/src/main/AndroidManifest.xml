@@ -12,6 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Atena">
         <activity
+            android:name=".ui.binance.BinanceActivity"
+            android:configChanges="orientation"
+            android:exported="true"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true" />
         <activity

@@ -25,23 +25,14 @@ public class HomeActivity extends AppCompatActivity {
     ActivityHomeBinding binding;
     HomeViewModel       viewModel;
     private static final int PICK_IMAGE = 100;
-    Uri imageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
-        Item item = (Item) getIntent().getSerializableExtra("item");
+        binding   = DataBindingUtil.setContentView(this, R.layout.activity_home);
+        viewModel = new HomeViewModel(this);
+        binding.setViewModel(viewModel);
 
-        if (item == null) {
-            onBackPressed();
-            finish();
-        } else {
-            viewModel = new HomeViewModel(item);
-            binding.setViewModel(viewModel);
-        }
-        int picId = getIntent().getIntExtra("picId", R.drawable.pic1);
-        binding.picHome.setImageResource(picId);
     }
 
     public void chooseImage(View view) {

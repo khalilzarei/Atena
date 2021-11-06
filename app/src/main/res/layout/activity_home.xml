@@ -45,15 +45,15 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/semi_regular"
                         android:gravity="center"
+                        android:onClick="@{viewModel::setTextField}"
                         android:padding="@dimen/_5sdp"
-                        android:text="@{viewModel.item.percent+` `}"
                         android:textColor="#1DB15D"
                         android:textSize="45sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:text="75.49 " />
+                        android:text="75.49 " />
 
                     <ImageView
                         android:id="@+id/imageView"
@@ -82,40 +82,40 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:fontFamily="@font/semi_medium"
-                        android:text="@{viewModel.item.filusdt}"
+                        android:onClick="@{viewModel::setTextField}"
                         android:textColor="#E0E1E6"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:text="FILUSDT" />
+                        android:text="FILUSDT" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/semi_medium"
                         android:gravity="center"
-                        android:text="@{viewModel.item.pl}"
+                        android:onClick="@{viewModel::setTextField}"
                         android:textColor="#E0E1E6"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:text="@string/pl" />
+                        android:text="@string/pl" />
 
                     <TextView
-                        setSizeTextColor="@{viewModel.item.size}"
+                        android:id="@+id/tvSizeStatus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/_10sdp"
                         android:fontFamily="@font/semi_medium"
                         android:gravity="center"
-                        android:text="@{viewModel.item.size}"
+                        android:onClick="@{viewModel::setTextField}"
                         android:textColor="#FF4E4E"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        tools:text="Small" />
+                        android:text="Small" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -124,7 +124,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardImage"
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/_200sdp"
+                    android:layout_height="@dimen/_170sdp"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_15sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
@@ -171,13 +171,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_5sdp"
                         android:fontFamily="@font/semi_medium"
-                        android:text="@{viewModel.item.entryPrice}"
+                        android:onClick="@{viewModel::setTextField}"
                         android:textColor="#ffffff"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/tvFilusdt"
                         app:layout_constraintTop_toBottomOf="@+id/tvFilusdt"
-                        tools:text="82.95" />
+                        android:text="82.95" />
 
                     <TextView
                         android:id="@+id/tvPL"
@@ -200,12 +200,12 @@
                         android:layout_marginTop="@dimen/_5sdp"
                         android:fontFamily="@font/semi_regular"
                         android:gravity="center"
-                        android:text="@{viewModel.item.currentPrice}"
+                        android:onClick="@{viewModel::setTextField}"
                         android:textColor="#ffffff"
                         android:textSize="15sp"
                         app:layout_constraintStart_toStartOf="@+id/tvPL"
                         app:layout_constraintTop_toBottomOf="@+id/tvPL"
-                        tools:text="85.50" />
+                        android:text="85.50" />
 
                     <TextView
                         android:id="@+id/tvSize"
@@ -225,12 +225,12 @@
                         android:layout_marginTop="@dimen/_5sdp"
                         android:fontFamily="@font/semi_regular"
                         android:gravity="center"
-                        android:text="@{viewModel.item.takeProfit}"
+                        android:onClick="@{viewModel::setTextField}"
                         android:textColor="#ffffff"
                         android:textSize="15sp"
                         app:layout_constraintStart_toStartOf="@+id/tvSize"
                         app:layout_constraintTop_toBottomOf="@+id/tvSize"
-                        tools:text="0.00/82.60" />
+                        android:text="0.00/82.60" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -248,8 +248,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/imageView3"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_45sdp"
                         android:layout_marginEnd="@dimen/_7sdp"
                         app:cardCornerRadius="@dimen/_10sdp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -312,8 +312,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/imageView2"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_width="@dimen/_45sdp"
+                        android:layout_height="@dimen/_45sdp"
                         android:layout_marginStart="@dimen/_6sdp"
                         app:cardCornerRadius="5dp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -325,7 +325,7 @@
                             android:layout_height="match_parent"
                             android:scaleType="fitXY"
                             android:src="@drawable/logo_footer" />
-                        \
+
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
